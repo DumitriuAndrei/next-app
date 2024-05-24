@@ -1,11 +1,7 @@
-export default function Home() {
-  return (
-    <>
-      <h1>Next.js Caching</h1>
-      <p>
-        Next.js performs some pretty aggressive caching. Understanding how it
-        works therefore is key to avoid issues.
-      </p>
-    </>
-  );
+import AuthForm from '@/components/auth-form';
+
+export default async function Home({ searchParams }) {
+  const formMode = searchParams.mode || 'login';
+
+  return <AuthForm mode={formMode} />;
 }
